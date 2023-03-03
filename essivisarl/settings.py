@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'authentification',
+    'Commercialapi',
+    
       
     
 ]
@@ -79,12 +82,11 @@ WSGI_APPLICATION = 'essivisarl.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME'  : 'SARL',
-        'HOST'  : 'localhost',
-        'PORT'  :   '3306',
-        'USER'  :   'root',
-        'PASSWORD' : 'root',
-        
+        'NAME': 'essivi',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
@@ -132,5 +134,6 @@ STATICFILES_DIRS=[os.path.join(BASE_DIR,'essivisarl/static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# AUTH_USER_MODEL= 'user.administrateur'
+LOGIN_REDIRECT_URL = 'index/'
+AUTH_USER_MODEL = 'authentification.Utilisateur'
 
